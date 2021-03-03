@@ -162,33 +162,16 @@ public class AltaEmpleado implements ActionListener {
                         ListaEmpleado.getListaDeEmpleado().add(empleado);
                         ListaEmpleado.escribirArchivo();
                     }
+                    
+                    System.out.println(ListaEmpleado.getListaDeEmpleado().get(0).toString());
 
                     vaciarCampos();
                 }
         }
         else if(actionEvent.getSource() == nuevoUsuario)
             vaciarCampos();
-        else if(actionEvent.getSource() == cargarButton){
-            Empleado empleado = ListaEmpleado.getListaDeEmpleado().get(1);
-
-            nombreTextField.setText(empleado.getNombre());
-            paternoTextField.setText(empleado.getApellidoPaterno());
-            maternoTextField.setText(empleado.getApellidoMaterno());
-            edadTextField.setText(String.valueOf(empleado.getEdad()));
-            curpTextField.setText(empleado.getCurp());
-
-            calleTextField.setText(empleado.getDireccion().getCalle());
-            numeroTextField.setText(empleado.getDireccion().getNumero());
-            coloniaTextField.setText(empleado.getDireccion().getColonia());
-            delegacionTextField.setText(empleado.getDireccion().getDelegacion());
-            estadoTextField.setText(empleado.getDireccion().getEstado());
-            cpTextField.setText(empleado.getDireccion().getCp());
-
-            numeroEmpleadoTextField.setText(String.valueOf(empleado.getNumeroEmpleado()));
-            departamentoTextField.setText(empleado.getDepartamento());
-            sueldoTextField.setText(String.valueOf(empleado.getSueldo()));
-            horasExtraTextField.setText(String.valueOf(empleado.getHorasExtra()));
-        }
+        else if(actionEvent.getSource() == cargarButton)
+            JOptionPane.showMessageDialog(null, StringUI.CARGAR_BUTTON);
         else if(actionEvent.getSource() == anteriorUsuario)
             JOptionPane.showMessageDialog(null, StringUI.ANTERIOR_BUTTON);
         else if(actionEvent.getSource() == siguienteUsuario)
